@@ -1,0 +1,35 @@
+def soma(a, b):
+    resultado = a + b
+    print(f"{a} + {b} = {resultado}")
+
+def subtracao(a, b):
+    resultado = a - b
+    print(f"{a} - {b} = {resultado}")
+
+def multiplicacao(a, b):
+    resultado = a * b
+    print(f"{a} x {b} = {resultado}")
+
+def divisao(a, b):
+    if b != 0:
+        resultado = a / b
+        print(f"{a} / {b} = {resultado}")
+    else:
+        print("Erro: divisão por zero não é permitida.")
+
+def main():
+    print("Calculadora Simples")
+    operador = input("Escolha a operação (+, -, x, /): ")
+    a = float(input("Digite o primeiro número: "))
+    b = float(input("Digite o segundo número: "))
+
+    if operador == "+":
+        soma(a, b)
+    elif operador == "-":
+        subtracao(a, b)
+    elif operador == "x":
+        multiplicacao(a, b)
+    elif operador == "/":
+        divisao(a, b)
+    else:
+        print("Operador inválido.")
