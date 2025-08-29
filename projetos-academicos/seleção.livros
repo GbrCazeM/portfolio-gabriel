@@ -1,0 +1,51 @@
+class Livro:
+    def __init__(self, titulo, autor, ano, preco):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano = ano
+        self.preco = preco
+
+    def get_titulo(self):
+        return self.titulo
+
+    def get_autor(self):
+        return self.autor
+
+    def get_ano(self):
+        return self.ano
+
+    def get_preco(self):
+        return self.preco
+
+    def set_titulo(self, titulo):
+        self.titulo = titulo
+
+    def set_autor(self, autor):
+        self.autor = autor
+
+    def set_ano(self, ano):
+        self.ano = ano
+
+    def set_preco(self, preco):
+        self.preco = preco
+
+    def aplicar_desconto(self, percentual):
+        """Aplica desconto no preço do livro"""
+        desconto = self.preco * (percentual / 100)
+        self.preco -= desconto
+        print(f"Desconto de {percentual}% aplicado! Novo preço: R${self.preco:.2f}")
+
+def main():
+    livro1 = Livro("Python para Iniciantes", "Ana Souza", 2020, 120.00)
+    livro2 = Livro("Lógica de Programação", "Carlos Lima", 2018, 90.00)
+    livro3 = Livro("Estruturas de Dados", "Mariana Torres", 2022, 150.00)
+
+    print(f"Livro: {livro1.get_titulo()}, Autor: {livro1.get_autor()}, Preço: R${livro1.get_preco():.2f}")
+
+    livro2.set_preco(85.00)
+    print(f"O livro {livro2.get_titulo()} teve o preço atualizado para R${livro2.get_preco():.2f}")
+
+    livro3.aplicar_desconto(10)
+
+if __name__ == "__main__":
+    main()
